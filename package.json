@@ -5,12 +5,12 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iberHK/react-native-picker.git"
+    "url": "git+https://github.com/react-native-oh-library/react-native-pickers.git"
   },
   "bugs": {
-    "url": "https://github.com/iberHK/react-native-picker/issues"
+    "url": "https://github.com/react-native-oh-library/react-native-pickers/issues"
   },
-  "homepage": "https://github.com/iberHK/react-native-picker",
+  "homepage": "https://github.com/react-native-oh-library/react-native-pickers",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

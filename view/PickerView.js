@@ -151,7 +151,7 @@ class PickerView extends BaseComponent {
             if (isNaN(toValue)) {
             } else {
                 //onSeleted
-                Animated.timing(this.path, { toValue: toValue, duration: 200 }).start(() => {
+                Animated.timing(this.path, { toValue: toValue, duration: 200,useNativeDriver:true }).start(() => {
                     this.onSeleted(Math.abs(toValue / this.props.itemHeight - 2));
                 });
             }
@@ -168,6 +168,7 @@ class PickerView extends BaseComponent {
             Animated.decay(this.path, {
                 velocity: gestureState.vy, //通过手势设置相关速度
                 deceleration: 0.995,
+                useNativeDriver:true,
             }).start(() => {
                 if (this.path._value % this.props.itemHeight == 0) {
                     this.path.removeListener(this.pathListener);
@@ -180,7 +181,8 @@ class PickerView extends BaseComponent {
                         let toValue = Math.round(this.path._value / this.props.itemHeight) * this.props.itemHeight;
                         Animated.timing(this.path, {
                             toValue: toValue,
-                            duration: 50
+                            duration: 50,
+                            useNativeDriver:true
                         }).start(() => {
                             //onSeleted
                             this.onSeleted(Math.abs(toValue / this.props.itemHeight - 2));
@@ -193,14 +195,14 @@ class PickerView extends BaseComponent {
                 if (listener.value < this.maxBottom && this.pathListener) {
                     this.path.removeListener(this.pathListener);
                     this.pathListener = null;
-                    Animated.timing(this.path, { toValue: this.maxBottom }).start(() => {
+                    Animated.timing(this.path, { toValue: this.maxBottom,useNativeDriver:true }).start(() => {
                         //onSeleted
                         this.onSeleted(Math.abs(this.maxBottom / this.props.itemHeight - 2));
                     });
                 } else if (listener.value > this.maxTop - this.props.itemHeight && this.pathListener) {
                     this.path.removeListener(this.pathListener);
                     this.pathListener = null;
-                    Animated.timing(this.path, { toValue: this.maxTop }).start(() => {
+                    Animated.timing(this.path, { toValue: this.maxTop,useNativeDriver:true }).start(() => {
                         //onSeleted
                         this.onSeleted(Math.abs(this.maxTop / this.props.itemHeight - 2));
                     });

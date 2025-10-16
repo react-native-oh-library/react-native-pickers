@@ -39,7 +39,7 @@ class DownloadDialog extends BaseDialog {
         if (this.state.total != total) {
             this.setState({ total });
         }
-        Animated.spring(this.process, { toValue: process }).start();
+        Animated.spring(this.process, { toValue: process,useNativeDriver:true }).start();
     }
 
     renderContent() {

@@ -37,9 +37,9 @@ export default class ToastComponent extends BaseComponent {
         this.timeoutId && clearTimeout(this.timeoutId);
         this.opacity.setValue(0)
         this.setState({ toastText: message, toastVisiable: true });
-        Animated.timing(this.opacity, { toValue: 1, duration: 200 }).start();
+        Animated.timing(this.opacity, { toValue: 1, duration: 200,useNativeDriver:true }).start();
         this.timeoutId = setTimeout(() => {
-            Animated.timing(this.opacity, { toValue: 0, duration: 200 }).start(() => {
+            Animated.timing(this.opacity, { toValue: 0, duration: 200,useNativeDriver:true }).start(() => {
                 this.setState({ toastVisiable: false });
             });
         }, this.props.duration);
