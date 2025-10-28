@@ -1,11 +1,15 @@
 {
-  "name": "react-native-pickers",
-  "version": "2.0.0",
+  "name": "@react-native-oh-tpl/react-native-pickers",
+  "version": "2.0.1-rc.1",
   "description": "纯JS实现的React-Native 各种弹窗、日期选择控件、地址选择控件等",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/react-native-oh-library/react-native-pickers.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "bugs": {
     "url": "https://github.com/react-native-oh-library/react-native-pickers/issues"
